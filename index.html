@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sports & General Quiz</title>
+  <style>
+    * { box-sizing: border-box; font-family: system-ui, sans-serif; }
+    body {
+      margin: 0; padding: 16px;
+      background: #0f172a; color: #f8fafc;
+      display: flex; justify-content: center; align-items: center; min-height: 100vh;
+    }
+    .card {
+      width: 100%; max-width: 440px;
+      background: #1e293b; padding: 24px; border-radius: 16px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+    }
+    .badge {
+      display: inline-block; background: #38bdf8; color: #0f172a;
+      font-size: 12px; font-weight: 700; padding: 4px 10px; border-radius: 999px;
+      margin-bottom: 12px;
+    }
+    h2 { font-size: 19px; margin: 0 0 18px; line-height: 1.4; }
+    .option {
+      width: 100%; text-align: left; padding: 12px 14px; margin-bottom: 10px;
+      background: #334155; color: #f8fafc; border: 2px solid transparent;
+      border-radius: 10px; font-size: 15px; cursor: pointer;
+    }
+    .option:hover { border-color: #38bdf8; }
+    .correct { background: #166534 !important; border-color: #22c55e !important; }
+    .wrong { background: #7f1d1d !important; border-color: #ef4444 !important; }
+    .btn {
+      width: 100%; padding: 12px; margin-top: 8px;
+      background: #22c55e; color: #0f172a; font-weight: 700;
+      border: none; border-radius: 10px; font-size: 15px; cursor: pointer;
+    }
+    .hidden { display: none; }
+    .meta { display: flex; justify-content: space-between; font-size: 13px; color: #94a3b8; margin-bottom: 10px; }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <div id="quiz-area">
+      <div class="meta">
+        <span id="progress">প্রশ্ন ১ / ৪</span>
+        <span id="score-text">স্কোর: ০</span>
+      </div>
+      <span class="badge" id="category">Sports</span>
+      <h2 id="question">প্রশ্ন লোড হচ্ছে...</h2>
+      <div id="options"></div>
+      <button class="btn hidden" id="next-btn" onclick="nextQuestion()">পরবর্তী প্রশ্ন</button>
+    </div>
+
+    <div id="result-area" class="hidden">
+      <h2>কুইজ সম্পন্ন হয়েছে!</h2>
+      <p id="final-score" style="font-size: 16px; color: #cbd5e1;"></p>
+      <button class="btn" onclick="restartQuiz()">আবার খেলুন</button>
+    </div>
+  </div>
+
+  <script>
+    const quizData = [
+      {
+        category: "Cricket",
+        question: "আন্তর্জাতিক ক্রিকেটে এক ইনিংসে সর্বোচ্চ ব্যক্তিগত রানের রেকর্ড কার?",
+        options: ["শচীন টেন্ডুলকার", "ব্রায়ান লারা (৪০০*)", "রোহিত শর্মা", "বিরাট কোহলি"],
+        answer: 1
+      },
+      {
+        category: "Football",
+        question: "ফিফা বিশ্বকাপ সবচেয়ে বেশিবার জিতেছে কোন দেশ?",
+        options: ["জার্মানি", "আর্জেন্টিনা", "ব্রাজিল", "ফ্রান্স"],
+        answer: 2
+      },
+      {
+        category: "General Knowledge",
+        question: "বাংলাদেশের জাতীয় খেলা কোনটি?",
+        options: ["ক্রিকেট", "ফুটবল", "কাবাডি (হা-ডু-ডু)", "হকি"],
+        answer: 2
+      },
+      {
+        category: "General Knowledge",
+        question: "সৌরজগতের সবচেয়ে বড় গ্রহ কোনটি?",
+        options: ["পৃথিবী", "শনি", "মঙ্গল", "বৃহস্পতি"],
+        answer: 3
+      }
+    ];
+
+    let currentIndex = 0;
+    let score = 0;
+    let answered = false;
+
+    function loadQuestion() {
+      answered = false;
+      document.getElementById("next-btn").classList.add("hidden");
+      const current = quizData[currentIndex];
+      document.getElementById("progress").innerText = `প্রশ্ন ${currentIndex + 1} / ${quizData.length}`;
+      document.getElementById("score-text").innerText = `স্কোর: ${score}`;
+      document.getElementById("category").innerText = current.category;
+      document.getElementById("question").innerText = current.question;
+
+      const optionsDiv = document.getElementById("options");
+      optionsDiv.innerHTML = "";
+
+      current.options.forEach((opt, idx) => {
+        const btn = document.createElement("button");
+        btn.className = "option";
+        btn.innerText = opt;
+        btn.onclick = () => selectOption(btn, idx);
+        optionsDiv.appendChild(btn);
+      });
+    }
+
+    function selectOption(selectedBtn, idx) {
+      if (answered) return;
+      answered = true;
+      const correctIdx = quizData[currentIndex].answer;
+      const allOptions = document.querySelectorAll(".option");
+
+      if (idx === correctIdx) {
+        selectedBtn.classList.add("correct");
+        score++;
+        document.getElementById("score-text").innerText = `স্কোর: ${score}`;
+      } else {
+        selectedBtn.classList.add("wrong");
+        allOptions[correctIdx].classList.add("correct");
+      }
+
+      document.getElementById("next-btn").classList.remove("hidden");
+    }
+
+    function nextQuestion() {
+      currentIndex++;
+      if (currentIndex < quizData.length) {
+        loadQuestion();
+      } else {
+        document.getElementById("quiz-area").classList.add("hidden");
+        document.getElementById("result-area").classList.remove("hidden");
+        document.getElementById("final-score").innerText = `আপনি মোট ${quizData.length}টির মধ্যে ${score}টি সঠিক উত্তর দিয়েছেন।`;
+      }
+    }
+
+    function restartQuiz() {
+      currentIndex = 0;
+      score = 0;
+      document.getElementById("result-area").classList.add("hidden");
+      document.getElementById("quiz-area").classList.remove("hidden");
+      loadQuestion();
+    }
+
+    loadQuestion();
+  </script>
+</body>
+</html>

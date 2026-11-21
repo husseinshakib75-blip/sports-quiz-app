@@ -3,50 +3,50 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>HTB Academy Sakib Mohona Freelancing Agency — Pro Gaming & Quiz Hub</title>
+  <title>HTB Academy Sakib Mohona Freelancing Agency — Casino Demo Hub & Support</title>
   <style>
     * { box-sizing: border-box; font-family: system-ui, -apple-system, sans-serif; user-select: none; }
     body {
       margin: 0;
-      background: #040711;
+      background: #050711;
       color: #f8fafc;
       min-height: 100vh;
       background-image:
-        radial-gradient(circle at 15% 15%, rgba(56, 189, 248, 0.14), transparent 35%),
-        radial-gradient(circle at 85% 20%, rgba(168, 85, 247, 0.16), transparent 38%),
-        radial-gradient(circle at 50% 90%, rgba(34, 197, 94, 0.10), transparent 40%);
+        radial-gradient(circle at 12% 12%, rgba(250, 204, 21, 0.13), transparent 36%),
+        radial-gradient(circle at 88% 18%, rgba(168, 85, 247, 0.16), transparent 38%),
+        radial-gradient(circle at 50% 90%, rgba(56, 189, 248, 0.12), transparent 40%);
     }
 
-    /* ওয়েবসাইটে ঢোকার সময় ভেসে উঠে মুছে যাওয়া অ্যানিমেশন */
+    /* ভেসে উঠে মুছে যাওয়া অ্যানিমেশন */
     .intro-splash {
       position: fixed;
       inset: 0;
       z-index: 999;
-      background: radial-gradient(circle at center, #1e1b4b 0%, #040711 75%);
+      background: radial-gradient(circle at center, #2e1065 0%, #050711 76%);
       display: flex;
       align-items: center;
       justify-content: center;
       padding: 20px;
       text-align: center;
       animation: splashFadeOut 0.8s ease forwards;
-      animation-delay: 2.8s;
+      animation-delay: 2.7s;
       pointer-events: none;
     }
     .intro-box {
-      padding: 24px 28px;
+      padding: 22px 26px;
       border-radius: 22px;
       background: rgba(15, 23, 42, 0.92);
-      border: 1px solid rgba(56, 189, 248, 0.55);
-      box-shadow: 0 0 40px rgba(56, 189, 248, 0.25), 0 25px 60px rgba(0, 0, 0, 0.8);
+      border: 1px solid rgba(250, 204, 21, 0.5);
+      box-shadow: 0 0 40px rgba(250, 204, 21, 0.2), 0 25px 60px rgba(0, 0, 0, 0.8);
       opacity: 0;
-      transform: translateY(18px) scale(0.95);
-      animation: textRevealAndClear 3s ease forwards;
+      transform: translateY(16px) scale(0.95);
+      animation: textRevealAndClear 2.9s ease forwards;
     }
     .intro-brand {
-      font-size: 22px;
+      font-size: 21px;
       font-weight: 900;
       line-height: 1.35;
-      background: linear-gradient(90deg, #38bdf8, #c084fc, #4ade80);
+      background: linear-gradient(90deg, #facc15, #c084fc, #38bdf8);
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
@@ -55,305 +55,321 @@
       margin-top: 8px;
       font-size: 12px;
       color: #cbd5e1;
-      letter-spacing: 1.2px;
+      letter-spacing: 1.1px;
     }
 
     @keyframes textRevealAndClear {
-      0% { opacity: 0; transform: translateY(18px) scale(0.95); filter: blur(5px); }
+      0% { opacity: 0; transform: translateY(16px) scale(0.95); filter: blur(4px); }
       22% { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); }
       72% { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); }
-      100% { opacity: 0; transform: translateY(-14px) scale(0.97); filter: blur(5px); }
+      100% { opacity: 0; transform: translateY(-12px) scale(0.97); filter: blur(5px); }
     }
     @keyframes splashFadeOut {
       to { opacity: 0; visibility: hidden; }
     }
 
     .container {
-      max-width: 760px;
+      max-width: 840px;
       margin: 0 auto;
-      padding: 16px 16px 40px;
+      padding: 14px 14px 44px;
     }
 
-    /* আকর্ষণীয় টপ ব্র্যান্ড ব্যানার */
     .brand-bar {
       background: linear-gradient(135deg, rgba(17, 24, 39, 0.96), rgba(30, 41, 59, 0.92));
-      border: 1px solid rgba(56, 189, 248, 0.4);
+      border: 1px solid rgba(250, 204, 21, 0.35);
       border-radius: 18px;
-      padding: 13px 16px;
-      margin-bottom: 14px;
+      padding: 12px 16px;
+      margin-bottom: 12px;
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 10px;
       flex-wrap: wrap;
-      box-shadow: 0 10px 30px rgba(2, 6, 23, 0.65);
     }
     .brand-name {
       font-size: 15px;
       font-weight: 800;
       display: flex;
       align-items: center;
-      gap: 9px;
-    }
-    .pulse-dot {
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      background: #22c55e;
-      box-shadow: 0 0 12px #22c55e;
-      animation: pulseGlow 1.8s infinite;
-    }
-    @keyframes pulseGlow {
-      0%, 100% { transform: scale(1); opacity: 1; }
-      50% { transform: scale(1.25); opacity: 0.7; }
-    }
-    .badges-right {
-      display: flex;
       gap: 8px;
-      align-items: center;
-      flex-wrap: wrap;
     }
-    .live-pill {
-      font-size: 11px;
-      font-weight: 800;
-      background: rgba(239, 68, 68, 0.18);
-      color: #fca5a5;
-      border: 1px solid rgba(239, 68, 68, 0.45);
-      padding: 4px 10px;
-      border-radius: 999px;
+    .dot {
+      width: 10px; height: 10px; border-radius: 50%;
+      background: #4ade80; box-shadow: 0 0 10px #4ade80;
     }
-    .free-pill {
-      font-size: 11px;
-      font-weight: 800;
-      background: linear-gradient(90deg, #22c55e, #4ade80);
-      color: #052e16;
-      padding: 4px 11px;
-      border-radius: 999px;
+    .pill-gold {
+      font-size: 11px; font-weight: 800;
+      background: linear-gradient(90deg, #facc15, #f59e0b);
+      color: #1e1b4b; padding: 4px 10px; border-radius: 999px;
+    }
+    .pill-free {
+      font-size: 11px; font-weight: 800;
+      background: rgba(34, 197, 94, 0.18); color: #86efac;
+      border: 1px solid rgba(34, 197, 94, 0.45);
+      padding: 4px 10px; border-radius: 999px;
     }
 
-    /* প্রিমিয়াম গেমিং হিরো ব্যানার */
     .hero {
       position: relative;
       border-radius: 20px;
       overflow: hidden;
-      border: 1px solid rgba(148, 163, 184, 0.22);
-      margin-bottom: 14px;
-      box-shadow: 0 14px 36px rgba(0, 0, 0, 0.55);
+      border: 1px solid rgba(250, 204, 21, 0.25);
+      margin-bottom: 12px;
     }
-    .hero svg {
-      width: 100%;
-      height: 185px;
-      display: block;
+    .hero svg { width: 100%; height: 160px; display: block; }
+    .hero-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(90deg, rgba(5,7,17,0.95) 0%, rgba(5,7,17,0.68) 68%, rgba(5,7,17,0.3) 100%);
+      display: flex; flex-direction: column; justify-content: center;
+      padding: 20px;
     }
-    .hero-content {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(90deg, rgba(4,7,17,0.95) 0%, rgba(4,7,17,0.68) 65%, rgba(4,7,17,0.25) 100%);
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding: 22px;
-    }
-    .hero-kicker {
-      display: inline-block;
-      width: fit-content;
-      font-size: 11px;
-      font-weight: 800;
-      color: #38bdf8;
-      background: rgba(56, 189, 248, 0.14);
-      border: 1px solid rgba(56, 189, 248, 0.35);
-      padding: 4px 10px;
-      border-radius: 999px;
-      margin-bottom: 8px;
-    }
-    .hero h1 {
-      margin: 0 0 6px;
-      font-size: 22px;
-      line-height: 1.25;
-      text-shadow: 0 2px 12px rgba(0,0,0,0.6);
-    }
-    .hero p {
-      margin: 0 0 12px;
-      font-size: 13px;
-      color: #cbd5e1;
-      max-width: 450px;
-    }
-    .cta-row {
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
-    }
-    .cta-btn {
-      border: none;
-      border-radius: 10px;
-      padding: 8px 14px;
-      font-size: 12px;
-      font-weight: 800;
-      cursor: pointer;
-      background: linear-gradient(90deg, #38bdf8, #818cf8);
-      color: #040711;
-    }
-    .cta-secondary {
-      border: 1px solid rgba(248, 250, 252, 0.25);
-      border-radius: 10px;
-      padding: 8px 14px;
-      font-size: 12px;
-      font-weight: 700;
-      cursor: pointer;
-      background: rgba(15, 23, 42, 0.75);
-      color: #f8fafc;
-    }
+    .hero h1 { margin: 0 0 6px; font-size: 20px; line-height: 1.25; }
+    .hero p { margin: 0; font-size: 13px; color: #cbd5e1; max-width: 500px; }
 
-    /* স্ট্যাটস কার্ড */
-    .stats-grid {
+    .wallet-bar {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 10px;
-      margin-bottom: 14px;
+      margin-bottom: 12px;
     }
-    .stat-card {
-      background: rgba(17, 24, 39, 0.92);
-      border: 1px solid rgba(148, 163, 184, 0.16);
-      border-radius: 15px;
-      padding: 12px;
+    .w-card {
+      background: #111827;
+      border: 1px solid #1e293b;
+      border-radius: 14px;
+      padding: 11px;
       text-align: center;
-      transition: transform 0.2s ease, border-color 0.2s ease;
     }
-    .stat-card:hover {
-      transform: translateY(-2px);
-      border-color: rgba(56, 189, 248, 0.45);
-    }
-    .stat-label { font-size: 11px; color: #94a3b8; margin-bottom: 4px; }
-    .stat-val { font-size: 18px; font-weight: 900; color: #38bdf8; }
+    .w-label { font-size: 11px; color: #94a3b8; }
+    .w-val { font-size: 17px; font-weight: 900; color: #facc15; margin-top: 2px; }
 
-    .tabs {
+    .main-tabs {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 8px;
-      margin-bottom: 14px;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 6px;
+      margin-bottom: 12px;
     }
-    .tab {
-      padding: 12px 8px;
-      border-radius: 13px;
+    @media (max-width: 560px) {
+      .main-tabs { grid-template-columns: repeat(3, 1fr); }
+    }
+    .m-tab {
+      padding: 10px 6px;
+      border-radius: 12px;
       border: 1px solid #334155;
       background: #111827;
       color: #e2e8f0;
-      font-size: 13px;
+      font-size: 12px;
       font-weight: 800;
       cursor: pointer;
-      transition: all 0.2s ease;
     }
-    .tab.active {
-      background: linear-gradient(90deg, #38bdf8, #4ade80);
-      color: #040711;
+    .m-tab.active {
+      background: linear-gradient(90deg, #facc15, #fb923c);
+      color: #090d16;
       border-color: transparent;
-      box-shadow: 0 6px 20px rgba(56, 189, 248, 0.25);
     }
 
     .panel {
-      background: rgba(17, 24, 39, 0.95);
-      border: 1px solid rgba(148, 163, 184, 0.18);
+      background: rgba(17, 24, 39, 0.96);
+      border: 1px solid #1e293b;
       border-radius: 18px;
-      padding: 18px;
-      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.45);
+      padding: 16px;
     }
-    .hud {
+
+    .casino-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+    @media (min-width: 640px) {
+      .casino-grid { grid-template-columns: 1fr 1fr; }
+    }
+    .casino-box {
+      background: linear-gradient(160deg, #1e1b4b 0%, #0f172a 100%);
+      border: 1px solid rgba(250, 204, 21, 0.35);
+      border-radius: 16px;
+      padding: 15px;
+      text-align: center;
+    }
+    .slot-window {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+      margin: 10px 0;
+    }
+    .reel {
+      background: #050711;
+      border: 2px solid #facc15;
+      border-radius: 12px;
+      padding: 12px 6px;
+      font-size: 24px;
+      font-weight: 900;
+    }
+    .wheel-display {
+      font-size: 18px;
+      font-weight: 900;
+      color: #4ade80;
+      background: #050711;
+      border: 2px dashed #38bdf8;
+      border-radius: 12px;
+      padding: 14px 10px;
+      margin: 10px 0;
+    }
+    .gold-btn {
+      width: 100%;
+      padding: 10px;
+      border-radius: 11px;
+      border: none;
+      background: linear-gradient(90deg, #facc15, #f59e0b);
+      color: #111827;
+      font-weight: 900;
+      font-size: 13px;
+      cursor: pointer;
+    }
+    .cyan-btn {
+      width: 100%;
+      padding: 10px;
+      border-radius: 11px;
+      border: none;
+      background: linear-gradient(90deg, #38bdf8, #4ade80);
+      color: #041019;
+      font-weight: 900;
+      font-size: 13px;
+      cursor: pointer;
+    }
+    .row-btns {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      margin-top: 10px;
+    }
+
+    .filter-row {
+      display: flex;
+      gap: 7px;
+      flex-wrap: wrap;
+      margin-bottom: 12px;
+    }
+    .f-btn {
+      padding: 6px 11px;
+      border-radius: 999px;
+      border: 1px solid #334155;
+      background: #090d16;
+      color: #cbd5e1;
+      font-size: 12px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+    .f-btn.active {
+      background: #38bdf8;
+      color: #050711;
+      border-color: #38bdf8;
+    }
+    .games-30-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+    }
+    @media (min-width: 600px) {
+      .games-30-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+    .g-card {
+      background: #1e293b;
+      border: 1px solid #334155;
+      border-radius: 14px;
+      padding: 12px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 8px;
+    }
+    .g-top {
+      display: flex;
+      justify-content: space-between;
+      font-size: 11px;
+      color: #94a3b8;
+    }
+    .g-title { font-size: 13px; font-weight: 800; color: #f8fafc; }
+    .play-mini {
+      width: 100%;
+      padding: 7px;
+      border-radius: 8px;
+      border: none;
+      background: #22c55e;
+      color: #052e16;
+      font-weight: 800;
+      font-size: 12px;
+      cursor: pointer;
+    }
+
+    .active-banner {
+      background: #090d16;
+      border: 1px solid #38bdf8;
+      border-radius: 14px;
+      padding: 12px 14px;
+      margin-bottom: 12px;
       display: flex;
       justify-content: space-between;
       align-items: center;
       gap: 10px;
-      margin-bottom: 12px;
-      padding: 10px 14px;
-      border-radius: 12px;
-      background: #090d16;
-      border: 1px solid #1e293b;
-      font-size: 14px;
-      font-weight: 800;
+      flex-wrap: wrap;
     }
-    .arena {
-      position: relative;
-      width: 100%;
-      height: 295px;
-      background:
-        linear-gradient(rgba(56, 189, 248, 0.06) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(56, 189, 248, 0.06) 1px, transparent 1px),
-        radial-gradient(circle at center, #1e1b4b 0%, #070b14 82%);
-      background-size: 28px 28px, 28px 28px, 100% 100%;
-      border: 2px solid rgba(56, 189, 248, 0.28);
-      border-radius: 16px;
-      overflow: hidden;
-      margin-bottom: 12px;
-    }
-    .target {
-      position: absolute;
-      width: 56px;
-      height: 56px;
-      border-radius: 50%;
-      border: 3px solid #ffffff;
-      background: radial-gradient(circle, #fde047 0%, #f97316 55%, #ef4444 100%);
-      box-shadow: 0 0 22px rgba(249, 115, 22, 0.85);
-      cursor: pointer;
-      transform: translate(-50%, -50%);
-      transition: transform 0.08s ease;
-    }
-    .target:active { transform: translate(-50%, -50%) scale(0.88); }
 
-    .btn {
+    /* সাপোর্ট ও মেসেজ বক্স */
+    .input-field, .textarea-field {
       width: 100%;
-      padding: 12px;
-      border-radius: 12px;
-      border: none;
-      background: linear-gradient(90deg, #22c55e, #4ade80);
-      color: #052e16;
-      font-weight: 900;
-      font-size: 14px;
+      padding: 10px 12px;
+      border-radius: 10px;
+      border: 1px solid #334155;
+      background: #090d16;
+      color: #f8fafc;
+      font-size: 13px;
+      margin-bottom: 10px;
+    }
+    .textarea-field { min-height: 85px; resize: vertical; }
+    .msg-log {
+      margin-top: 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .msg-bubble {
+      background: #1e293b;
+      border-left: 3px solid #facc15;
+      border-radius: 10px;
+      padding: 10px 12px;
+      font-size: 13px;
+    }
+    .msg-meta {
+      font-size: 11px;
+      color: #94a3b8;
+      margin-bottom: 4px;
+    }
+    .danger-btn {
+      background: #7f1d1d;
+      color: #fecaca;
+      border: 1px solid #ef4444;
+      padding: 7px 12px;
+      border-radius: 8px;
+      font-size: 12px;
+      font-weight: 700;
       cursor: pointer;
       margin-top: 8px;
-      box-shadow: 0 8px 20px rgba(34, 197, 94, 0.25);
     }
+
     .option {
-      width: 100%;
-      text-align: left;
-      padding: 12px 14px;
-      margin-bottom: 9px;
-      background: #1e293b;
-      color: #f8fafc;
-      border: 2px solid transparent;
-      border-radius: 12px;
-      font-size: 14px;
-      cursor: pointer;
-      transition: border-color 0.15s ease;
+      width: 100%; text-align: left; padding: 11px 14px; margin-bottom: 8px;
+      background: #1e293b; color: #f8fafc; border: 2px solid transparent;
+      border-radius: 10px; font-size: 14px; cursor: pointer;
     }
-    .option:hover { border-color: #38bdf8; }
     .correct { background: #166534 !important; border-color: #22c55e !important; }
     .wrong { background: #7f1d1d !important; border-color: #ef4444 !important; }
-
     .card-item {
-      background: #1e293b;
-      border-radius: 14px;
-      padding: 14px;
-      margin-bottom: 10px;
-      border-left: 4px solid #38bdf8;
+      background: #1e293b; border-radius: 12px; padding: 13px;
+      margin-bottom: 10px; border-left: 4px solid #38bdf8;
     }
     .link-btn {
-      display: inline-block;
-      margin-top: 8px;
-      text-decoration: none;
-      background: #38bdf8;
-      color: #040711;
-      padding: 8px 13px;
-      border-radius: 9px;
-      font-size: 12px;
-      font-weight: 800;
-    }
-    .leader-row {
-      display: flex;
-      justify-content: space-between;
-      padding: 11px 13px;
-      border-radius: 12px;
-      background: #1e293b;
-      margin-bottom: 8px;
-      font-size: 14px;
+      display: inline-block; margin-top: 8px; text-decoration: none;
+      background: #38bdf8; color: #050711; padding: 7px 12px;
+      border-radius: 8px; font-size: 12px; font-weight: 800;
     }
     .hidden { display: none; }
   </style>
@@ -363,88 +379,130 @@
   <div class="intro-splash" aria-hidden="true">
     <div class="intro-box">
       <div class="intro-brand">HTB Academy Sakib Mohona Freelancing Agency</div>
-      <div class="intro-sub">PRO GAMING ARENA • QUIZ • LIVE SPORTS HUB</div>
+      <div class="intro-sub">CASINO DEMO ARCADE • 36+ GAMES • SUPPORT HUB</div>
     </div>
   </div>
 
   <div class="container">
     <div class="brand-bar">
       <div class="brand-name">
-        <span class="pulse-dot"></span>
+        <span class="dot"></span>
         <span>HTB Academy Sakib Mohona Freelancing Agency</span>
       </div>
-      <div class="badges-right">
-        <span class="live-pill">● ARENA ONLINE</span>
-        <span class="free-pill">১০০% ফ্রি প্লে</span>
+      <div style="display:flex; gap:8px; flex-wrap:wrap;">
+        <span class="pill-gold">CASINO DEMO</span>
+        <span class="pill-free">১০০% ফ্রি পয়েন্ট</span>
       </div>
     </div>
 
     <div class="hero">
-      <svg viewBox="0 0 760 185" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Gaming Banner">
+      <svg viewBox="0 0 840 160" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Casino Demo Banner">
         <defs>
-          <linearGradient id="gHero" x1="0" y1="0" x2="1" y2="1">
+          <linearGradient id="cGrad" x1="0" y1="0" x2="1" y2="1">
             <stop offset="0%" stop-color="#090d16"/>
-            <stop offset="50%" stop-color="#3b0764"/>
-            <stop offset="100%" stop-color="#075985"/>
+            <stop offset="55%" stop-color="#4c1d95"/>
+            <stop offset="100%" stop-color="#78350f"/>
           </linearGradient>
         </defs>
-        <rect width="760" height="185" fill="url(#gHero)"/>
-        <circle cx="615" cy="92" r="76" fill="#38bdf8" opacity="0.16"/>
-        <circle cx="668" cy="48" r="36" fill="#c084fc" opacity="0.26"/>
-        <g transform="translate(562, 54)" fill="none" stroke="#f8fafc" stroke-width="3">
-          <rect x="0" y="12" width="102" height="52" rx="24" fill="#040711" fill-opacity="0.78"/>
-          <path d="M26 38h18M35 29v18" stroke="#38bdf8" stroke-linecap="round"/>
-          <circle cx="68" cy="33" r="4.5" fill="#4ade80" stroke="none"/>
-          <circle cx="80" cy="44" r="4.5" fill="#facc15" stroke="none"/>
-        </g>
+        <rect width="840" height="160" fill="url(#cGrad)"/>
+        <circle cx="690" cy="80" r="68" fill="#facc15" opacity="0.14"/>
+        <circle cx="745" cy="40" r="34" fill="#c084fc" opacity="0.22"/>
       </svg>
-      <div class="hero-content">
-        <span class="hero-kicker">⚡ FAST REFLEX • SPORTS QUIZ • LIVE HUB</span>
-        <h1>খেলুন, পয়েন্ট জিতুন ও লাইভ আপডেট দেখুন</h1>
-        <p>দ্রুত টার্গেট ট্যাপ গেম, স্মার্ট মিনি কুইজ এবং ক্রিকেট-ফুটবল লাইভ সেন্টার—সব এক প্ল্যাটফর্মে।</p>
-        <div class="cta-row">
-          <button class="cta-btn" onclick="showSection('game')">এখনই গেম খেলুন</button>
-          <button class="cta-secondary" onclick="showSection('quiz')">কুইজ চ্যালেঞ্জ</button>
+      <div class="hero-overlay">
+        <h1>ক্যাসিনো-স্টাইল ফ্রি ডেমো গেম ও সাপোর্ট সেন্টার</h1>
+        <p>স্লট, হুইল, হাই-লো কার্ড ও ডাইস ডেমো খেলুন এবং কোনো সমস্যা হলে সরাসরি মেসেজ পাঠান।</p>
+      </div>
+    </div>
+
+    <div class="wallet-bar">
+      <div class="w-card">
+        <div class="w-label">ভার্চুয়াল পয়েন্ট</div>
+        <div class="w-val" id="pts-val">100</div>
+      </div>
+      <div class="w-card">
+        <div class="w-label">ডেমো লবি</div>
+        <div class="w-val" style="color:#38bdf8;">36 Demos</div>
+      </div>
+      <div class="w-card">
+        <div class="w-label">মোড</div>
+        <div class="w-val" style="color:#4ade80;">FREE DEMO</div>
+      </div>
+    </div>
+
+    <div class="main-tabs">
+      <button class="m-tab active" id="mt-casino" onclick="openMain('casino')">🎰 ক্যাসিনো ডেমো</button>
+      <button class="m-tab" id="mt-lobby" onclick="openMain('lobby')">🕹️ ৩৬ গেম লবি</button>
+      <button class="m-tab" id="mt-quiz" onclick="openMain('quiz')">🧠 কুইজ</button>
+      <button class="m-tab" id="mt-sports" onclick="openMain('sports')">🏆 স্পোর্টস</button>
+      <button class="m-tab" id="mt-support" onclick="openMain('support')">💬 সাপোর্ট</button>
+    </div>
+
+    <!-- ১. ক্যাসিনো-স্টাইল ফ্রি ডেমো (৪টি মিনি ডেমো) -->
+    <div class="panel" id="mp-casino">
+      <div class="casino-grid">
+        <div class="casino-box">
+          <div style="font-size:15px; font-weight:900; color:#facc15;">💎 Royal Slot Demo</div>
+          <div style="font-size:12px; color:#cbd5e1; margin-top:4px;">স্পিন: ৫ পয়েন্ট • ৩টি মিললে +৪০ পয়েন্ট</div>
+          <div class="slot-window">
+            <div class="reel" id="r1">🍒</div>
+            <div class="reel" id="r2">💎</div>
+            <div class="reel" id="r3">⭐</div>
+          </div>
+          <button class="gold-btn" onclick="spinSlot()">স্লট স্পিন করুন</button>
+          <p id="slot-msg" style="font-size:12px; color:#e2e8f0; margin:10px 0 0;">ফ্রি ভার্চুয়াল পয়েন্ট দিয়ে স্পিন করুন।</p>
+        </div>
+
+        <div class="casino-box">
+          <div style="font-size:15px; font-weight:900; color:#38bdf8;">🎡 Lucky Wheel Demo</div>
+          <div style="font-size:12px; color:#cbd5e1; margin-top:4px;">বোনাস হুইল ঘুরিয়ে ফ্রি পয়েন্ট নিন</div>
+          <div class="wheel-display" id="wheel-res">READY TO SPIN</div>
+          <button class="cyan-btn" onclick="spinWheel()">লাকি হুইল ঘোরান</button>
+          <p id="wheel-msg" style="font-size:12px; color:#e2e8f0; margin:10px 0 0;">কোনো ডিপোজিট ছাড়াই ফ্রি ডেমো।</p>
+        </div>
+
+        <div class="casino-box">
+          <div style="font-size:15px; font-weight:900; color:#c084fc;">🃏 High-Low Card Demo</div>
+          <div style="font-size:12px; color:#cbd5e1; margin-top:4px;">বর্তমান কার্ড: <strong id="cur-card" style="color:#facc15;">7</strong> (১ থেকে ১৩)</div>
+          <div class="row-btns">
+            <button class="cyan-btn" onclick="guessCard('high')">উঁচু (Higher)</button>
+            <button class="gold-btn" onclick="guessCard('low')">নিচু (Lower)</button>
+          </div>
+          <p id="card-msg" style="font-size:12px; color:#e2e8f0; margin:10px 0 0;">সঠিক অনুমানে +১৫ ফ্রি পয়েন্ট।</p>
+        </div>
+
+        <div class="casino-box">
+          <div style="font-size:15px; font-weight:900; color:#4ade80;">🎲 Lucky Dice Demo</div>
+          <div style="font-size:12px; color:#cbd5e1; margin-top:4px;">জোড় সংখ্যা (2, 4, 6) বা বড় (4–6) ধরুন</div>
+          <div class="wheel-display" id="dice-res">🎲 -</div>
+          <button class="gold-btn" onclick="rollDice()">ডাইস রোল করুন</button>
+          <p id="dice-msg" style="font-size:12px; color:#e2e8f0; margin:10px 0 0;">রোল করলে +১০ ফ্রি পয়েন্ট বোনাস।</p>
         </div>
       </div>
     </div>
 
-    <div class="stats-grid">
-      <div class="stat-card">
-        <div class="stat-label">মোট পয়েন্ট</div>
-        <div class="stat-val" id="total-pts">0</div>
+    <!-- ২. ৩৬টি ক্যাসিনো/আর্কেড ডেমো গেমের লবি -->
+    <div class="panel hidden" id="mp-lobby">
+      <div class="active-banner" id="active-game-box">
+        <div>
+          <div style="font-size:11px; color:#38bdf8; font-weight:800;">SELECTED CASINO DEMO</div>
+          <div id="cur-game-title" style="font-size:15px; font-weight:800;">#01 Golden Slot Rush</div>
+          <div id="cur-game-note" style="font-size:12px; color:#cbd5e1;">ডেমো রাউন্ড খেলে +১০ ফ্রি পয়েন্ট নিন।</div>
+        </div>
+        <button class="f-btn active" style="padding:8px 14px;" onclick="playDemoRound()">ডেমো খেলুন (+10)</button>
       </div>
-      <div class="stat-card">
-        <div class="stat-label">গেম বেস্ট</div>
-        <div class="stat-val" id="best-pts">0</div>
+
+      <div class="filter-row">
+        <button class="f-btn active" onclick="filterGames('All', this)">সব (36)</button>
+        <button class="f-btn" onclick="filterGames('Slot Demo', this)">Slot Demo</button>
+        <button class="f-btn" onclick="filterGames('Table & Card', this)">Table & Card</button>
+        <button class="f-btn" onclick="filterGames('Spin & Dice', this)">Spin & Dice</button>
       </div>
-      <div class="stat-card">
-        <div class="stat-label">অ্যাক্সেস</div>
-        <div class="stat-val" style="color:#4ade80;">FREE</div>
-      </div>
+
+      <div class="games-30-grid" id="games-30-list"></div>
     </div>
 
-    <div class="tabs">
-      <button class="tab active" id="t-game" onclick="showSection('game')">🎮 গেম এরিনা</button>
-      <button class="tab" id="t-quiz" onclick="showSection('quiz')">🧠 মিনি কুইজ</button>
-      <button class="tab" id="t-sports" onclick="showSection('sports')">🏆 স্পোর্টস ও র‍্যাংক</button>
-    </div>
-
-    <!-- গেম সেকশন -->
-    <div class="panel" id="sec-game">
-      <div class="hud">
-        <span>স্কোর: <span id="g-score" style="color:#4ade80;">0</span></span>
-        <span>সময়: <span id="g-time" style="color:#facc15;">20s</span></span>
-      </div>
-      <div class="arena" id="arena">
-        <button class="target hidden" id="target" onclick="hitTarget(event)" aria-label="Target"></button>
-      </div>
-      <p id="g-status" style="margin:0 0 8px; font-size:13px; color:#cbd5e1;">গেম শুরু করতে নিচের বাটনে চাপুন এবং চকচকে টার্গেটে দ্রুত ট্যাপ করুন!</p>
-      <button class="btn" id="start-game-btn" onclick="startGame()">গেম শুরু করুন</button>
-    </div>
-
-    <!-- কুইজ সেকশন -->
-    <div class="panel hidden" id="sec-quiz">
+    <!-- ৩. মিনি কুইজ -->
+    <div class="panel hidden" id="mp-quiz">
       <div id="q-box">
         <div style="display:flex; justify-content:space-between; font-size:13px; color:#94a3b8; margin-bottom:10px;">
           <span id="q-count">প্রশ্ন ১ / ৩</span>
@@ -452,28 +510,17 @@
         </div>
         <h3 id="q-text" style="margin:0 0 14px; font-size:17px;"></h3>
         <div id="q-options"></div>
-        <button class="btn hidden" id="q-next" onclick="nextQ()">পরবর্তী প্রশ্ন</button>
+        <button class="cyan-btn hidden" id="q-next" onclick="nextQ()">পরবর্তী প্রশ্ন</button>
       </div>
       <div id="q-end" class="hidden">
         <h3 style="margin-top:0;">কুইজ সম্পন্ন!</h3>
         <p id="q-summary" style="color:#cbd5e1;"></p>
-        <button class="btn" onclick="resetQ()">আবার খেলুন</button>
+        <button class="cyan-btn" onclick="resetQ()">আবার খেলুন</button>
       </div>
     </div>
 
-    <!-- স্পোর্টস ও র‍্যাংক সেকশন -->
-    <div class="panel hidden" id="sec-sports">
-      <h3 style="margin:0 0 10px; font-size:16px;">টপ পয়েন্ট বোর্ড</h3>
-      <div class="leader-row">
-        <span>🥇 আপনার সেরা পয়েন্ট</span>
-        <strong id="lb-user" style="color:#4ade80;">0 pts</strong>
-      </div>
-      <div class="leader-row">
-        <span>🥈 এরিনা চ্যালেঞ্জার</span>
-        <strong style="color:#38bdf8;">15 pts</strong>
-      </div>
-
-      <h3 style="margin:16px 0 10px; font-size:16px;">লাইভ স্পোর্টস হাব</h3>
+    <!-- ৪. স্পোর্টস হাব -->
+    <div class="panel hidden" id="mp-sports">
       <div class="card-item">
         <div style="font-size:12px; color:#4ade80; font-weight:800;">CRICKET</div>
         <div style="font-size:15px; font-weight:700; margin:4px 0;">Live Cricket Scoreboard & Match Center</div>
@@ -485,77 +532,160 @@
         <a class="link-btn" href="https://www.espn.com/soccer/scoreboard" target="_blank" rel="noopener noreferrer">ফুটবল ও স্পোর্টস হাব</a>
       </div>
     </div>
+
+    <!-- ৫. সাপোর্ট ও মেসেজ বক্স -->
+    <div class="panel hidden" id="mp-support">
+      <h3 style="margin:0 0 6px; font-size:17px;">💬 সাপোর্ট ও মেসেজ বক্স</h3>
+      <p style="margin:0 0 12px; font-size:13px; color:#cbd5e1;">
+        ওয়েবসাইট চালাতে বা গেম ডেমো নিয়ে কোনো সমস্যা হলে নিচে আপনার নাম ও মেসেজ লিখুন। (আয়োজক: <strong>HTB Academy Sakib Mohona Freelancing Agency</strong>)
+      </p>
+
+      <input type="text" class="input-field" id="sup-name" placeholder="আপনার নাম লিখুন" />
+      <select class="input-field" id="sup-topic">
+        <option value="গেম বা স্লট ডেমো সমস্যা">গেম বা স্লট ডেমো সমস্যা</option>
+        <option value="পেজ লোড বা বাটন কাজ না করা">পেজ লোড বা বাটন কাজ না করা</option>
+        <option value="নতুন ফিচার বা পরামর্শ">নতুন ফিচার বা পরামর্শ</option>
+      </select>
+      <textarea class="textarea-field" id="sup-msg" placeholder="কী সমস্যা হচ্ছে বা কী বলতে চান বিস্তারিত লিখুন..."></textarea>
+      <button class="cyan-btn" onclick="sendSupportMsg()">মেসেজ পাঠান</button>
+
+      <div class="msg-log" id="sup-list"></div>
+      <button class="danger-btn" id="clear-msg-btn" onclick="clearSupportMsgs()">মেসেজ লগ মুছুন</button>
+    </div>
   </div>
 
   <script>
-    let totalPoints = Number(localStorage.getItem("htb_total_pts") || 0);
-    let bestScore = Number(localStorage.getItem("htb_best_score") || 0);
-
-    function syncStats() {
-      document.getElementById("total-pts").innerText = totalPoints;
-      document.getElementById("best-pts").innerText = bestScore;
-      document.getElementById("lb-user").innerText = Math.max(bestScore, totalPoints) + " pts";
-      localStorage.setItem("htb_total_pts", totalPoints);
-      localStorage.setItem("htb_best_score", bestScore);
+    let pts = Number(localStorage.getItem("htb_demo_pts") || 100);
+    function updatePts(delta) {
+      pts = Math.max(0, pts + delta);
+      localStorage.setItem("htb_demo_pts", pts);
+      document.getElementById("pts-val").innerText = pts;
     }
+    document.getElementById("pts-val").innerText = pts;
 
-    function showSection(name) {
-      ["game", "quiz", "sports"].forEach(s => {
-        document.getElementById("t-" + s).classList.toggle("active", s === name);
-        document.getElementById("sec-" + s).classList.toggle("hidden", s !== name);
+    function openMain(tab) {
+      ["casino", "lobby", "quiz", "sports", "support"].forEach(t => {
+        document.getElementById("mt-" + t).classList.toggle("active", t === tab);
+        document.getElementById("mp-" + t).classList.toggle("hidden", t !== tab);
       });
     }
 
-    let gScore = 0, gTime = 20, gTimer = null, gActive = false;
+    // ১. ক্যাসিনো ডেমো গেমগুলো
+    const symbols = ["🍒", "💎", "⭐", "🔔", "🍀", "👑"];
+    function spinSlot() {
+      if (pts < 5) {
+        updatePts(25);
+        document.getElementById("slot-msg").innerText = "পয়েন্ট কম ছিল, ফ্রি +২৫ রিফিল দেওয়া হয়েছে!";
+        return;
+      }
+      updatePts(-5);
+      const a = symbols[Math.floor(Math.random() * symbols.length)];
+      const b = symbols[Math.floor(Math.random() * symbols.length)];
+      const c = symbols[Math.floor(Math.random() * symbols.length)];
+      document.getElementById("r1").innerText = a;
+      document.getElementById("r2").innerText = b;
+      document.getElementById("r3").innerText = c;
 
-    function moveTarget() {
-      const arena = document.getElementById("arena");
-      const target = document.getElementById("target");
-      const pad = 34;
-      const x = pad + Math.random() * Math.max(20, arena.clientWidth - pad * 2);
-      const y = pad + Math.random() * Math.max(20, arena.clientHeight - pad * 2);
-      target.style.left = x + "px";
-      target.style.top = y + "px";
+      if (a === b && b === c) {
+        updatePts(40);
+        document.getElementById("slot-msg").innerText = "জ্যাকপট ডেমো! +৪০ ফ্রি পয়েন্ট যোগ হয়েছে।";
+      } else if (a === b || b === c || a === c) {
+        updatePts(12);
+        document.getElementById("slot-msg").innerText = "দুটি সিম্বল মিলেছে! +১২ ফ্রি পয়েন্ট পেয়েছেন।";
+      } else {
+        document.getElementById("slot-msg").innerText = "আবার স্পিন করে দেখুন!";
+      }
     }
 
-    function startGame() {
-      clearInterval(gTimer);
-      gScore = 0;
-      gTime = 20;
-      gActive = true;
-      document.getElementById("g-score").innerText = gScore;
-      document.getElementById("g-time").innerText = gTime + "s";
-      document.getElementById("g-status").innerText = "দ্রুত টার্গেটে ট্যাপ করুন!";
-      document.getElementById("start-game-btn").disabled = true;
-
-      const target = document.getElementById("target");
-      target.classList.remove("hidden");
-      moveTarget();
-
-      gTimer = setInterval(() => {
-        gTime--;
-        document.getElementById("g-time").innerText = gTime + "s";
-        if (gTime <= 0) {
-          clearInterval(gTimer);
-          gActive = false;
-          target.classList.add("hidden");
-          document.getElementById("start-game-btn").disabled = false;
-          totalPoints += gScore;
-          if (gScore > bestScore) bestScore = gScore;
-          syncStats();
-          document.getElementById("g-status").innerText = `সময় শেষ! আপনি ${gScore} পয়েন্ট পেয়েছেন।`;
-        }
-      }, 1000);
+    const wheelPrizes = [5, 10, 15, 20, 25, 30];
+    function spinWheel() {
+      const prize = wheelPrizes[Math.floor(Math.random() * wheelPrizes.length)];
+      updatePts(prize);
+      document.getElementById("wheel-res").innerText = `+${prize} FREE PTS`;
+      document.getElementById("wheel-msg").innerText = `লাকি হুইল থেকে +${prize} ফ্রি পয়েন্ট যোগ হয়েছে।`;
     }
 
-    function hitTarget(e) {
-      e.stopPropagation();
-      if (!gActive) return;
-      gScore++;
-      document.getElementById("g-score").innerText = gScore;
-      moveTarget();
+    let curCard = 7;
+    function guessCard(dir) {
+      const nextCard = Math.floor(Math.random() * 13) + 1;
+      const prevCard = curCard;
+      curCard = nextCard;
+      document.getElementById("cur-card").innerText = curCard;
+
+      const won = (dir === "high" && nextCard > prevCard) || (dir === "low" && nextCard < prevCard);
+      if (won) {
+        updatePts(15);
+        document.getElementById("card-msg").innerText = `সঠিক! আগের কার্ড ছিল ${prevCard}, নতুন কার্ড ${nextCard} (+১৫ পয়েন্ট)।`;
+      } else {
+        document.getElementById("card-msg").innerText = `আগের কার্ড ${prevCard}, নতুন কার্ড ${nextCard}। আবার চেষ্টা করুন!`;
+      }
     }
 
+    const diceFaces = ["⚀", "⚁", "⚂", "⚃", "⚄", "⚅"];
+    function rollDice() {
+      const idx = Math.floor(Math.random() * 6);
+      const val = idx + 1;
+      document.getElementById("dice-res").innerText = `${diceFaces[idx]} (${val})`;
+      updatePts(10);
+      document.getElementById("dice-msg").innerText = `ডাইসে এসেছে ${val}—ডেমো বোনাস +১০ পয়েন্ট যোগ হয়েছে!`;
+    }
+
+    // ২. ৩৬টি ক্যাসিনো ডেমো গেম লবি
+    const cats = ["Slot Demo", "Table & Card", "Spin & Dice"];
+    const demoNames = [
+      "Golden Slot Rush", "Royal Blackjack Demo", "Lucky Wheel Pro", "Diamond 777 Slot",
+      "High Card Showdown", "Mega Dice Spin", "Fruit Spin Demo", "Poker Pair Lite",
+      "Fortune Spinner", "VIP Crown Slot", "Baccarat Card Demo", "Triple Dice Roll",
+      "Emerald Reels", "Ace Snap Demo", "Bonus Wheel Lite", "Pharaoh Slot Demo",
+      "Color Card Pick", "Neon Dice Duel", "Starburst Slot Demo", "King Low-High",
+      "Gold Coin Spinner", "Dragon Slot Demo", "Lucky 21 Demo", "Rapid Dice Demo",
+      "Jungle Reels Lite", "Royal Flush Demo", "Spin & Win Demo", "Cyber Slot Demo",
+      "Card Match Demo", "Dice Tower Lite", "Sunset Reels", "Casino Night Demo",
+      "Wheel of Demo", "Crystal Slot Lite", "Ace & Queen Demo", "Grand Casino Demo"
+    ];
+
+    const games36 = demoNames.map((n, i) => ({
+      id: i + 1,
+      name: `#${String(i + 1).padStart(2, "0")} ${n}`,
+      cat: cats[i % cats.length]
+    }));
+
+    let selectedGame = games36[0];
+
+    function renderGames36(list) {
+      document.getElementById("games-30-list").innerHTML = list.map(g => `
+        <div class="g-card">
+          <div class="g-top">
+            <span>${g.cat}</span>
+            <span style="color:#facc15;">DEMO</span>
+          </div>
+          <div class="g-title">${g.name}</div>
+          <button class="play-mini" onclick="selectGame(${g.id})">ডেমো সিলেক্ট করুন</button>
+        </div>
+      `).join("");
+    }
+
+    function filterGames(cat, btn) {
+      document.querySelectorAll(".f-btn").forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+      const items = cat === "All" ? games36 : games36.filter(g => g.cat === cat);
+      renderGames36(items);
+    }
+
+    function selectGame(id) {
+      const found = games36.find(g => g.id === id);
+      if (!found) return;
+      selectedGame = found;
+      document.getElementById("cur-game-title").innerText = found.name;
+      document.getElementById("cur-game-note").innerText = `${found.cat} সিলেক্ট হয়েছে—ডেমো রাউন্ড খেলে পয়েন্ট নিন।`;
+    }
+
+    function playDemoRound() {
+      updatePts(10);
+      document.getElementById("cur-game-note").innerText = `${selectedGame.name} ডেমো সম্পন্ন! +১০ ফ্রি পয়েন্ট যোগ হয়েছে।`;
+    }
+
+    // ৩. মিনি কুইজ
     const miniQuiz = [
       { q: "ফুটবল ম্যাচে লাল কার্ড দেখলে কী হয়?", opts: ["শুধু ফ্রি কিক", "খেলোয়াড় মাঠ ছাড়তে বাধ্য হন", "পেনাল্টি", "ম্যাচ বাতিল"], ans: 1 },
       { q: "টি-টোয়েন্টি ক্রিকেটে প্রতি ইনিংস কত ওভারের?", opts: ["১০ ওভার", "২০ ওভার", "৩০ ওভার", "৫০ ওভার"], ans: 1 },
@@ -588,9 +718,8 @@
       const all = document.querySelectorAll("#q-options .option");
       if (i === right) {
         btn.classList.add("correct");
-        qScore += 5;
-        totalPoints += 5;
-        syncStats();
+        qScore += 10;
+        updatePts(10);
         document.getElementById("q-score").innerText = `স্কোর: ${qScore}`;
       } else {
         btn.classList.add("wrong");
@@ -605,7 +734,7 @@
       else {
         document.getElementById("q-box").classList.add("hidden");
         document.getElementById("q-end").classList.remove("hidden");
-        document.getElementById("q-summary").innerText = `কুইজ থেকে আপনি মোট ${qScore} পয়েন্ট অর্জন করেছেন।`;
+        document.getElementById("q-summary").innerText = `কুইজ থেকে আপনি ${qScore} ফ্রি পয়েন্ট পেয়েছেন।`;
       }
     }
 
@@ -616,8 +745,47 @@
       loadQ();
     }
 
-    syncStats();
+    // ৪. সাপোর্ট ও মেসেজ বক্স (LocalStorage)
+    let supportMsgs = JSON.parse(localStorage.getItem("htb_support_msgs") || "[]");
+
+    function renderSupportMsgs() {
+      const box = document.getElementById("sup-list");
+      if (!supportMsgs.length) {
+        box.innerHTML = `<div style="font-size:12px; color:#94a3b8;">এখনো কোনো সাপোর্ট মেসেজ পাঠানো হয়নি।</div>`;
+        return;
+      }
+      box.innerHTML = supportMsgs.map(m => `
+        <div class="msg-bubble">
+          <div class="msg-meta"><strong>${m.name}</strong> • ${m.topic} • ${m.time}</div>
+          <div>${m.text}</div>
+        </div>
+      `).join("");
+    }
+
+    function sendSupportMsg() {
+      const nameVal = document.getElementById("sup-name").value.trim() || "ভিজিটর";
+      const topicVal = document.getElementById("sup-topic").value;
+      const textVal = document.getElementById("sup-msg").value.trim();
+      if (!textVal) {
+        alert("অনুগ্রহ করে আগে আপনার মেসেজটি লিখুন।");
+        return;
+      }
+      const now = new Date().toLocaleTimeString("bn-BD", { hour: "2-digit", minute: "2-digit" });
+      supportMsgs.unshift({ name: nameVal, topic: topicVal, text: textVal, time: now });
+      localStorage.setItem("htb_support_msgs", JSON.stringify(supportMsgs));
+      document.getElementById("sup-msg").value = "";
+      renderSupportMsgs();
+    }
+
+    function clearSupportMsgs() {
+      supportMsgs = [];
+      localStorage.removeItem("htb_support_msgs");
+      renderSupportMsgs();
+    }
+
+    renderGames36(games36);
     loadQ();
+    renderSupportMsgs();
   </script>
 </body>
-    </html>
+      </html>

@@ -3,14 +3,18 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>HTB Academy Sakib Mohona Freelancing Agency — Live Sports & Quiz</title>
+  <title>HTB Academy Sakib Mohona Freelancing Agency — Pro Gaming & Quiz Hub</title>
   <style>
-    * { box-sizing: border-box; font-family: system-ui, -apple-system, sans-serif; }
+    * { box-sizing: border-box; font-family: system-ui, -apple-system, sans-serif; user-select: none; }
     body {
       margin: 0;
-      background: #070b14;
+      background: #040711;
       color: #f8fafc;
       min-height: 100vh;
+      background-image:
+        radial-gradient(circle at 15% 15%, rgba(56, 189, 248, 0.14), transparent 35%),
+        radial-gradient(circle at 85% 20%, rgba(168, 85, 247, 0.16), transparent 38%),
+        radial-gradient(circle at 50% 90%, rgba(34, 197, 94, 0.10), transparent 40%);
     }
 
     /* ওয়েবসাইটে ঢোকার সময় ভেসে উঠে মুছে যাওয়া অ্যানিমেশন */
@@ -18,32 +22,31 @@
       position: fixed;
       inset: 0;
       z-index: 999;
-      background: radial-gradient(circle at top, #172554 0%, #070b14 72%);
+      background: radial-gradient(circle at center, #1e1b4b 0%, #040711 75%);
       display: flex;
       align-items: center;
       justify-content: center;
       padding: 20px;
       text-align: center;
       animation: splashFadeOut 0.8s ease forwards;
-      animation-delay: 2.9s;
+      animation-delay: 2.8s;
       pointer-events: none;
     }
     .intro-box {
-      padding: 22px 26px;
-      border-radius: 20px;
-      background: rgba(15, 23, 42, 0.85);
-      border: 1px solid rgba(56, 189, 248, 0.45);
-      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.65);
+      padding: 24px 28px;
+      border-radius: 22px;
+      background: rgba(15, 23, 42, 0.92);
+      border: 1px solid rgba(56, 189, 248, 0.55);
+      box-shadow: 0 0 40px rgba(56, 189, 248, 0.25), 0 25px 60px rgba(0, 0, 0, 0.8);
       opacity: 0;
-      transform: translateY(18px) scale(0.96);
-      animation: textRevealAndClear 3.1s ease forwards;
+      transform: translateY(18px) scale(0.95);
+      animation: textRevealAndClear 3s ease forwards;
     }
     .intro-brand {
       font-size: 22px;
       font-weight: 900;
-      letter-spacing: 0.4px;
       line-height: 1.35;
-      background: linear-gradient(90deg, #38bdf8, #4ade80, #facc15);
+      background: linear-gradient(90deg, #38bdf8, #c084fc, #4ade80);
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
@@ -51,325 +54,397 @@
     .intro-sub {
       margin-top: 8px;
       font-size: 12px;
-      color: #94a3b8;
-      letter-spacing: 1px;
-      text-transform: uppercase;
+      color: #cbd5e1;
+      letter-spacing: 1.2px;
     }
 
     @keyframes textRevealAndClear {
-      0% {
-        opacity: 0;
-        transform: translateY(18px) scale(0.96);
-        filter: blur(4px);
-      }
-      22% {
-        opacity: 1;
-        transform: translateY(0) scale(1);
-        filter: blur(0);
-      }
-      72% {
-        opacity: 1;
-        transform: translateY(0) scale(1);
-        filter: blur(0);
-      }
-      100% {
-        opacity: 0;
-        transform: translateY(-14px) scale(0.97);
-        filter: blur(5px);
-      }
+      0% { opacity: 0; transform: translateY(18px) scale(0.95); filter: blur(5px); }
+      22% { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); }
+      72% { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); }
+      100% { opacity: 0; transform: translateY(-14px) scale(0.97); filter: blur(5px); }
     }
-
     @keyframes splashFadeOut {
-      to {
-        opacity: 0;
-        visibility: hidden;
-      }
+      to { opacity: 0; visibility: hidden; }
     }
 
     .container {
-      max-width: 700px;
+      max-width: 760px;
       margin: 0 auto;
-      padding: 16px;
+      padding: 16px 16px 40px;
     }
 
-    /* একনজরে চোখে পড়ার মতো স্টাইলিশ ব্র্যান্ড স্ট্রিপ */
-    .brand-showcase {
-      background: linear-gradient(135deg, rgba(30, 41, 59, 0.95), rgba(15, 23, 42, 0.98));
-      border: 1px solid rgba(56, 189, 248, 0.35);
-      border-radius: 16px;
-      padding: 12px 16px;
+    /* আকর্ষণীয় টপ ব্র্যান্ড ব্যানার */
+    .brand-bar {
+      background: linear-gradient(135deg, rgba(17, 24, 39, 0.96), rgba(30, 41, 59, 0.92));
+      border: 1px solid rgba(56, 189, 248, 0.4);
+      border-radius: 18px;
+      padding: 13px 16px;
       margin-bottom: 14px;
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 10px;
       flex-wrap: wrap;
-      box-shadow: 0 8px 24px rgba(2, 6, 23, 0.5);
+      box-shadow: 0 10px 30px rgba(2, 6, 23, 0.65);
     }
-    .brand-title {
+    .brand-name {
       font-size: 15px;
       font-weight: 800;
-      color: #f8fafc;
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 9px;
     }
-    .brand-dot {
+    .pulse-dot {
       width: 10px;
       height: 10px;
       border-radius: 50%;
       background: #22c55e;
-      box-shadow: 0 0 10px #22c55e;
-      flex-shrink: 0;
+      box-shadow: 0 0 12px #22c55e;
+      animation: pulseGlow 1.8s infinite;
     }
-    .brand-pill {
+    @keyframes pulseGlow {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.25); opacity: 0.7; }
+    }
+    .badges-right {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .live-pill {
       font-size: 11px;
-      font-weight: 700;
-      color: #0f172a;
-      background: #38bdf8;
+      font-weight: 800;
+      background: rgba(239, 68, 68, 0.18);
+      color: #fca5a5;
+      border: 1px solid rgba(239, 68, 68, 0.45);
       padding: 4px 10px;
       border-radius: 999px;
     }
+    .free-pill {
+      font-size: 11px;
+      font-weight: 800;
+      background: linear-gradient(90deg, #22c55e, #4ade80);
+      color: #052e16;
+      padding: 4px 11px;
+      border-radius: 999px;
+    }
 
-    /* গেমিং ও স্পোর্টস ব্যানার ছবি (SVG) */
+    /* প্রিমিয়াম গেমিং হিরো ব্যানার */
     .hero {
       position: relative;
-      border-radius: 18px;
+      border-radius: 20px;
       overflow: hidden;
-      border: 1px solid #1e293b;
-      background: #111827;
-      margin-bottom: 16px;
+      border: 1px solid rgba(148, 163, 184, 0.22);
+      margin-bottom: 14px;
+      box-shadow: 0 14px 36px rgba(0, 0, 0, 0.55);
     }
     .hero svg {
       width: 100%;
-      height: 175px;
+      height: 185px;
       display: block;
     }
-    .hero-overlay {
+    .hero-content {
       position: absolute;
       inset: 0;
-      background: linear-gradient(90deg, rgba(7,11,20,0.93) 0%, rgba(7,11,20,0.6) 65%, rgba(7,11,20,0.35) 100%);
+      background: linear-gradient(90deg, rgba(4,7,17,0.95) 0%, rgba(4,7,17,0.68) 65%, rgba(4,7,17,0.25) 100%);
       display: flex;
       flex-direction: column;
       justify-content: center;
-      padding: 20px;
+      padding: 22px;
     }
-    .hero-tag {
+    .hero-kicker {
       display: inline-block;
       width: fit-content;
-      background: #22c55e;
-      color: #052e16;
       font-size: 11px;
       font-weight: 800;
+      color: #38bdf8;
+      background: rgba(56, 189, 248, 0.14);
+      border: 1px solid rgba(56, 189, 248, 0.35);
       padding: 4px 10px;
       border-radius: 999px;
       margin-bottom: 8px;
     }
     .hero h1 {
       margin: 0 0 6px;
-      font-size: 21px;
+      font-size: 22px;
       line-height: 1.25;
+      text-shadow: 0 2px 12px rgba(0,0,0,0.6);
     }
     .hero p {
-      margin: 0;
+      margin: 0 0 12px;
       font-size: 13px;
       color: #cbd5e1;
-      max-width: 440px;
+      max-width: 450px;
     }
-
-    .nav-tabs {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 10px;
-      margin-bottom: 16px;
-    }
-    .tab-btn {
-      padding: 12px;
-      border-radius: 12px;
-      border: 1px solid #334155;
-      background: #111827;
-      color: #e2e8f0;
-      font-size: 14px;
-      font-weight: 700;
-      cursor: pointer;
-    }
-    .tab-btn.active {
-      background: #38bdf8;
-      color: #0f172a;
-      border-color: #38bdf8;
-    }
-
-    .panel {
-      background: #111827;
-      border: 1px solid #1e293b;
-      border-radius: 16px;
-      padding: 18px;
-    }
-    .sport-filters {
+    .cta-row {
       display: flex;
       gap: 8px;
       flex-wrap: wrap;
+    }
+    .cta-btn {
+      border: none;
+      border-radius: 10px;
+      padding: 8px 14px;
+      font-size: 12px;
+      font-weight: 800;
+      cursor: pointer;
+      background: linear-gradient(90deg, #38bdf8, #818cf8);
+      color: #040711;
+    }
+    .cta-secondary {
+      border: 1px solid rgba(248, 250, 252, 0.25);
+      border-radius: 10px;
+      padding: 8px 14px;
+      font-size: 12px;
+      font-weight: 700;
+      cursor: pointer;
+      background: rgba(15, 23, 42, 0.75);
+      color: #f8fafc;
+    }
+
+    /* স্ট্যাটস কার্ড */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
       margin-bottom: 14px;
     }
-    .chip {
-      padding: 6px 12px;
-      border-radius: 999px;
+    .stat-card {
+      background: rgba(17, 24, 39, 0.92);
+      border: 1px solid rgba(148, 163, 184, 0.16);
+      border-radius: 15px;
+      padding: 12px;
+      text-align: center;
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+    .stat-card:hover {
+      transform: translateY(-2px);
+      border-color: rgba(56, 189, 248, 0.45);
+    }
+    .stat-label { font-size: 11px; color: #94a3b8; margin-bottom: 4px; }
+    .stat-val { font-size: 18px; font-weight: 900; color: #38bdf8; }
+
+    .tabs {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+      margin-bottom: 14px;
+    }
+    .tab {
+      padding: 12px 8px;
+      border-radius: 13px;
       border: 1px solid #334155;
-      background: #0f172a;
-      color: #cbd5e1;
-      font-size: 12px;
+      background: #111827;
+      color: #e2e8f0;
+      font-size: 13px;
+      font-weight: 800;
       cursor: pointer;
+      transition: all 0.2s ease;
     }
-    .chip.active {
-      background: #22c55e;
-      color: #052e16;
-      border-color: #22c55e;
-      font-weight: 700;
+    .tab.active {
+      background: linear-gradient(90deg, #38bdf8, #4ade80);
+      color: #040711;
+      border-color: transparent;
+      box-shadow: 0 6px 20px rgba(56, 189, 248, 0.25);
     }
-    .match-card {
-      background: #1e293b;
-      border-radius: 12px;
-      padding: 14px;
-      margin-bottom: 12px;
-      border-left: 4px solid #38bdf8;
+
+    .panel {
+      background: rgba(17, 24, 39, 0.95);
+      border: 1px solid rgba(148, 163, 184, 0.18);
+      border-radius: 18px;
+      padding: 18px;
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.45);
     }
-    .match-top {
+    .hud {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      font-size: 12px;
-      color: #94a3b8;
-      margin-bottom: 8px;
-    }
-    .live-dot {
-      color: #4ade80;
-      font-weight: 700;
-    }
-    .teams {
-      font-size: 16px;
-      font-weight: 700;
-      margin-bottom: 6px;
-    }
-    .score-line {
-      font-size: 13px;
-      color: #e2e8f0;
-      margin-bottom: 10px;
-    }
-    .watch-btn {
-      display: inline-block;
-      text-decoration: none;
-      background: #38bdf8;
-      color: #0f172a;
-      font-size: 12px;
+      gap: 10px;
+      margin-bottom: 12px;
+      padding: 10px 14px;
+      border-radius: 12px;
+      background: #090d16;
+      border: 1px solid #1e293b;
+      font-size: 14px;
       font-weight: 800;
-      padding: 8px 13px;
-      border-radius: 8px;
     }
-    .note-box {
-      font-size: 12px;
-      color: #94a3b8;
-      background: #0f172a;
-      padding: 10px 12px;
-      border-radius: 10px;
+    .arena {
+      position: relative;
+      width: 100%;
+      height: 295px;
+      background:
+        linear-gradient(rgba(56, 189, 248, 0.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(56, 189, 248, 0.06) 1px, transparent 1px),
+        radial-gradient(circle at center, #1e1b4b 0%, #070b14 82%);
+      background-size: 28px 28px, 28px 28px, 100% 100%;
+      border: 2px solid rgba(56, 189, 248, 0.28);
+      border-radius: 16px;
+      overflow: hidden;
+      margin-bottom: 12px;
+    }
+    .target {
+      position: absolute;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      border: 3px solid #ffffff;
+      background: radial-gradient(circle, #fde047 0%, #f97316 55%, #ef4444 100%);
+      box-shadow: 0 0 22px rgba(249, 115, 22, 0.85);
+      cursor: pointer;
+      transform: translate(-50%, -50%);
+      transition: transform 0.08s ease;
+    }
+    .target:active { transform: translate(-50%, -50%) scale(0.88); }
+
+    .btn {
+      width: 100%;
+      padding: 12px;
+      border-radius: 12px;
+      border: none;
+      background: linear-gradient(90deg, #22c55e, #4ade80);
+      color: #052e16;
+      font-weight: 900;
+      font-size: 14px;
+      cursor: pointer;
       margin-top: 8px;
-      line-height: 1.5;
+      box-shadow: 0 8px 20px rgba(34, 197, 94, 0.25);
     }
     .option {
       width: 100%;
       text-align: left;
-      padding: 11px 14px;
+      padding: 12px 14px;
       margin-bottom: 9px;
       background: #1e293b;
       color: #f8fafc;
       border: 2px solid transparent;
-      border-radius: 10px;
+      border-radius: 12px;
       font-size: 14px;
       cursor: pointer;
+      transition: border-color 0.15s ease;
     }
+    .option:hover { border-color: #38bdf8; }
     .correct { background: #166534 !important; border-color: #22c55e !important; }
     .wrong { background: #7f1d1d !important; border-color: #ef4444 !important; }
-    .btn {
-      width: 100%;
-      padding: 11px;
-      margin-top: 6px;
-      background: #22c55e;
-      color: #052e16;
+
+    .card-item {
+      background: #1e293b;
+      border-radius: 14px;
+      padding: 14px;
+      margin-bottom: 10px;
+      border-left: 4px solid #38bdf8;
+    }
+    .link-btn {
+      display: inline-block;
+      margin-top: 8px;
+      text-decoration: none;
+      background: #38bdf8;
+      color: #040711;
+      padding: 8px 13px;
+      border-radius: 9px;
+      font-size: 12px;
       font-weight: 800;
-      border: none;
-      border-radius: 10px;
+    }
+    .leader-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 11px 13px;
+      border-radius: 12px;
+      background: #1e293b;
+      margin-bottom: 8px;
       font-size: 14px;
-      cursor: pointer;
     }
     .hidden { display: none; }
   </style>
 </head>
 <body>
-  <!-- ওয়েবসাইটে ঢোকার সময় ভেসে উঠে মুছে যাওয়া লেখা -->
+  <!-- ভেসে উঠে মুছে যাওয়া অ্যানিমেশন -->
   <div class="intro-splash" aria-hidden="true">
     <div class="intro-box">
       <div class="intro-brand">HTB Academy Sakib Mohona Freelancing Agency</div>
-      <div class="intro-sub">Welcome • Live Sports & Quiz Hub</div>
+      <div class="intro-sub">PRO GAMING ARENA • QUIZ • LIVE SPORTS HUB</div>
     </div>
   </div>
 
   <div class="container">
-    <!-- একনজরে দেখার মতো স্টাইলিশ ব্র্যান্ড ব্যানার -->
-    <div class="brand-showcase">
-      <div class="brand-title">
-        <span class="brand-dot"></span>
+    <div class="brand-bar">
+      <div class="brand-name">
+        <span class="pulse-dot"></span>
         <span>HTB Academy Sakib Mohona Freelancing Agency</span>
       </div>
-      <span class="brand-pill">OFFICIAL HUB</span>
+      <div class="badges-right">
+        <span class="live-pill">● ARENA ONLINE</span>
+        <span class="free-pill">১০০% ফ্রি প্লে</span>
+      </div>
     </div>
 
-    <!-- গেমিং ও স্পোর্টস ব্যানার ছবি (SVG) -->
     <div class="hero">
-      <svg viewBox="0 0 700 175" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Gaming and Live Sports Banner">
+      <svg viewBox="0 0 760 185" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Gaming Banner">
         <defs>
-          <linearGradient id="bgGrad" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0%" stop-color="#0f172a"/>
-            <stop offset="50%" stop-color="#1d4ed8"/>
-            <stop offset="100%" stop-color="#0f766e"/>
+          <linearGradient id="gHero" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#090d16"/>
+            <stop offset="50%" stop-color="#3b0764"/>
+            <stop offset="100%" stop-color="#075985"/>
           </linearGradient>
         </defs>
-        <rect width="700" height="175" fill="url(#bgGrad)"/>
-        <circle cx="560" cy="88" r="70" fill="#38bdf8" opacity="0.16"/>
-        <circle cx="610" cy="46" r="34" fill="#22c55e" opacity="0.22"/>
-        <g transform="translate(512, 50)" fill="none" stroke="#e2e8f0" stroke-width="3">
-          <rect x="0" y="12" width="96" height="48" rx="22" fill="#0f172a" fill-opacity="0.75"/>
-          <path d="M24 36h18M33 27v18" stroke="#38bdf8" stroke-linecap="round"/>
-          <circle cx="64" cy="31" r="4" fill="#22c55e" stroke="none"/>
-          <circle cx="75" cy="41" r="4" fill="#fbbf24" stroke="none"/>
+        <rect width="760" height="185" fill="url(#gHero)"/>
+        <circle cx="615" cy="92" r="76" fill="#38bdf8" opacity="0.16"/>
+        <circle cx="668" cy="48" r="36" fill="#c084fc" opacity="0.26"/>
+        <g transform="translate(562, 54)" fill="none" stroke="#f8fafc" stroke-width="3">
+          <rect x="0" y="12" width="102" height="52" rx="24" fill="#040711" fill-opacity="0.78"/>
+          <path d="M26 38h18M35 29v18" stroke="#38bdf8" stroke-linecap="round"/>
+          <circle cx="68" cy="33" r="4.5" fill="#4ade80" stroke="none"/>
+          <circle cx="80" cy="44" r="4.5" fill="#facc15" stroke="none"/>
         </g>
       </svg>
-      <div class="hero-overlay">
-        <span class="hero-tag">GAMING • LIVE SPORTS • QUIZ</span>
-        <h1>ক্রিকেট, ফুটবল ও সব খেলার আপডেট + কুইজ</h1>
-        <p>সহজে লাইভ ম্যাচ হাব ও স্কোরকার্ডে যান এবং পাশাপাশি ছোট কুইজ খেলে স্কোর যাচাই করুন।</p>
+      <div class="hero-content">
+        <span class="hero-kicker">⚡ FAST REFLEX • SPORTS QUIZ • LIVE HUB</span>
+        <h1>খেলুন, পয়েন্ট জিতুন ও লাইভ আপডেট দেখুন</h1>
+        <p>দ্রুত টার্গেট ট্যাপ গেম, স্মার্ট মিনি কুইজ এবং ক্রিকেট-ফুটবল লাইভ সেন্টার—সব এক প্ল্যাটফর্মে।</p>
+        <div class="cta-row">
+          <button class="cta-btn" onclick="showSection('game')">এখনই গেম খেলুন</button>
+          <button class="cta-secondary" onclick="showSection('quiz')">কুইজ চ্যালেঞ্জ</button>
+        </div>
       </div>
     </div>
 
-    <div class="nav-tabs">
-      <button class="tab-btn active" id="tab-live" onclick="switchTab('live')">লাইভ খেলা (Live)</button>
-      <button class="tab-btn" id="tab-quiz" onclick="switchTab('quiz')">ছোট কুইজ (Quiz)</button>
-    </div>
-
-    <!-- লাইভ খেলার অংশ -->
-    <div class="panel" id="live-panel">
-      <div class="sport-filters">
-        <button class="chip active" onclick="filterSport('All', this)">সব খেলা</button>
-        <button class="chip" onclick="filterSport('Cricket', this)">ক্রিকেট</button>
-        <button class="chip" onclick="filterSport('Football', this)">ফুটবল</button>
-        <button class="chip" onclick="filterSport('Other', this)">অন্যান্য খেলা</button>
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-label">মোট পয়েন্ট</div>
+        <div class="stat-val" id="total-pts">0</div>
       </div>
-      <div id="matches-list"></div>
-      <div class="note-box">
-        <strong>নোট:</strong> সরাসরি অনুমোদিত সম্প্রচার বা স্কোর প্ল্যাটফর্মের লিংক যুক্ত করা হয়েছে। কোনো ম্যাচের সময়সূচি বা অঞ্চলভেদে লাইভ ভিডিও প্রাপ্যতা ভিন্ন হতে পারে।
+      <div class="stat-card">
+        <div class="stat-label">গেম বেস্ট</div>
+        <div class="stat-val" id="best-pts">0</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">অ্যাক্সেস</div>
+        <div class="stat-val" style="color:#4ade80;">FREE</div>
       </div>
     </div>
 
-    <!-- ছোট কুইজের অংশ -->
-    <div class="panel hidden" id="quiz-panel">
+    <div class="tabs">
+      <button class="tab active" id="t-game" onclick="showSection('game')">🎮 গেম এরিনা</button>
+      <button class="tab" id="t-quiz" onclick="showSection('quiz')">🧠 মিনি কুইজ</button>
+      <button class="tab" id="t-sports" onclick="showSection('sports')">🏆 স্পোর্টস ও র‍্যাংক</button>
+    </div>
+
+    <!-- গেম সেকশন -->
+    <div class="panel" id="sec-game">
+      <div class="hud">
+        <span>স্কোর: <span id="g-score" style="color:#4ade80;">0</span></span>
+        <span>সময়: <span id="g-time" style="color:#facc15;">20s</span></span>
+      </div>
+      <div class="arena" id="arena">
+        <button class="target hidden" id="target" onclick="hitTarget(event)" aria-label="Target"></button>
+      </div>
+      <p id="g-status" style="margin:0 0 8px; font-size:13px; color:#cbd5e1;">গেম শুরু করতে নিচের বাটনে চাপুন এবং চকচকে টার্গেটে দ্রুত ট্যাপ করুন!</p>
+      <button class="btn" id="start-game-btn" onclick="startGame()">গেম শুরু করুন</button>
+    </div>
+
+    <!-- কুইজ সেকশন -->
+    <div class="panel hidden" id="sec-quiz">
       <div id="q-box">
         <div style="display:flex; justify-content:space-between; font-size:13px; color:#94a3b8; margin-bottom:10px;">
           <span id="q-count">প্রশ্ন ১ / ৩</span>
@@ -380,91 +455,112 @@
         <button class="btn hidden" id="q-next" onclick="nextQ()">পরবর্তী প্রশ্ন</button>
       </div>
       <div id="q-end" class="hidden">
-        <h3 style="margin-top:0;">কুইজ শেষ!</h3>
+        <h3 style="margin-top:0;">কুইজ সম্পন্ন!</h3>
         <p id="q-summary" style="color:#cbd5e1;"></p>
         <button class="btn" onclick="resetQ()">আবার খেলুন</button>
+      </div>
+    </div>
+
+    <!-- স্পোর্টস ও র‍্যাংক সেকশন -->
+    <div class="panel hidden" id="sec-sports">
+      <h3 style="margin:0 0 10px; font-size:16px;">টপ পয়েন্ট বোর্ড</h3>
+      <div class="leader-row">
+        <span>🥇 আপনার সেরা পয়েন্ট</span>
+        <strong id="lb-user" style="color:#4ade80;">0 pts</strong>
+      </div>
+      <div class="leader-row">
+        <span>🥈 এরিনা চ্যালেঞ্জার</span>
+        <strong style="color:#38bdf8;">15 pts</strong>
+      </div>
+
+      <h3 style="margin:16px 0 10px; font-size:16px;">লাইভ স্পোর্টস হাব</h3>
+      <div class="card-item">
+        <div style="font-size:12px; color:#4ade80; font-weight:800;">CRICKET</div>
+        <div style="font-size:15px; font-weight:700; margin:4px 0;">Live Cricket Scoreboard & Match Center</div>
+        <a class="link-btn" href="https://www.espncricinfo.com/live-cricket-score" target="_blank" rel="noopener noreferrer">ক্রিকেট স্কোর দেখুন</a>
+      </div>
+      <div class="card-item">
+        <div style="font-size:12px; color:#38bdf8; font-weight:800;">FOOTBALL & ALL SPORTS</div>
+        <div style="font-size:15px; font-weight:700; margin:4px 0;">Live Football & Sports Updates</div>
+        <a class="link-btn" href="https://www.espn.com/soccer/scoreboard" target="_blank" rel="noopener noreferrer">ফুটবল ও স্পোর্টস হাব</a>
       </div>
     </div>
   </div>
 
   <script>
-    const matches = [
-      {
-        sport: "Cricket",
-        league: "International & T20",
-        status: "LIVE / SCOREBOARD",
-        teams: "Live Cricket Score & Match Hub",
-        detail: "বল বাই বল আপডেট, লাইভ স্কোর ও ম্যাচ সেন্টার",
-        link: "https://www.espncricinfo.com/live-cricket-score",
-        linkText: "ক্রিকেট লাইভ হাব খুলুন"
-      },
-      {
-        sport: "Football",
-        league: "Leagues & International",
-        status: "LIVE / SCOREBOARD",
-        teams: "Live Football Scores & Fixtures",
-        detail: "চলমান ম্যাচের স্কোর, লাইনআপ ও লাইভ আপডেট",
-        link: "https://www.espn.com/soccer/scoreboard",
-        linkText: "ফুটবল লাইভ হাব খুলুন"
-      },
-      {
-        sport: "Other",
-        league: "Tennis, Badminton, Basketball & More",
-        status: "SPORTS HUB",
-        teams: "All Sports Live Scores & Schedule",
-        detail: "অন্যান্য খেলার লাইভ ফলাফল ও আজকের সূচি",
-        link: "https://www.espn.com/",
-        linkText: "সব খেলার হাব খুলুন"
-      }
-    ];
+    let totalPoints = Number(localStorage.getItem("htb_total_pts") || 0);
+    let bestScore = Number(localStorage.getItem("htb_best_score") || 0);
 
-    function switchTab(tab) {
-      document.getElementById("tab-live").classList.toggle("active", tab === "live");
-      document.getElementById("tab-quiz").classList.toggle("active", tab === "quiz");
-      document.getElementById("live-panel").classList.toggle("hidden", tab !== "live");
-      document.getElementById("quiz-panel").classList.toggle("hidden", tab !== "quiz");
+    function syncStats() {
+      document.getElementById("total-pts").innerText = totalPoints;
+      document.getElementById("best-pts").innerText = bestScore;
+      document.getElementById("lb-user").innerText = Math.max(bestScore, totalPoints) + " pts";
+      localStorage.setItem("htb_total_pts", totalPoints);
+      localStorage.setItem("htb_best_score", bestScore);
     }
 
-    function filterSport(sport, el) {
-      document.querySelectorAll(".chip").forEach(c => c.classList.remove("active"));
-      el.classList.add("active");
-      const list = sport === "All" ? matches : matches.filter(m => m.sport === sport);
-      renderMatches(list);
+    function showSection(name) {
+      ["game", "quiz", "sports"].forEach(s => {
+        document.getElementById("t-" + s).classList.toggle("active", s === name);
+        document.getElementById("sec-" + s).classList.toggle("hidden", s !== name);
+      });
     }
 
-    function renderMatches(list) {
-      const box = document.getElementById("matches-list");
-      box.innerHTML = list.map(m => `
-        <div class="match-card">
-          <div class="match-top">
-            <span>${m.sport} • ${m.league}</span>
-            <span class="live-dot">${m.status}</span>
-          </div>
-          <div class="teams">${m.teams}</div>
-          <div class="score-line">${m.detail}</div>
-          <a class="watch-btn" href="${m.link}" target="_blank" rel="noopener noreferrer">${m.linkText}</a>
-        </div>
-      `).join("");
+    let gScore = 0, gTime = 20, gTimer = null, gActive = false;
+
+    function moveTarget() {
+      const arena = document.getElementById("arena");
+      const target = document.getElementById("target");
+      const pad = 34;
+      const x = pad + Math.random() * Math.max(20, arena.clientWidth - pad * 2);
+      const y = pad + Math.random() * Math.max(20, arena.clientHeight - pad * 2);
+      target.style.left = x + "px";
+      target.style.top = y + "px";
+    }
+
+    function startGame() {
+      clearInterval(gTimer);
+      gScore = 0;
+      gTime = 20;
+      gActive = true;
+      document.getElementById("g-score").innerText = gScore;
+      document.getElementById("g-time").innerText = gTime + "s";
+      document.getElementById("g-status").innerText = "দ্রুত টার্গেটে ট্যাপ করুন!";
+      document.getElementById("start-game-btn").disabled = true;
+
+      const target = document.getElementById("target");
+      target.classList.remove("hidden");
+      moveTarget();
+
+      gTimer = setInterval(() => {
+        gTime--;
+        document.getElementById("g-time").innerText = gTime + "s";
+        if (gTime <= 0) {
+          clearInterval(gTimer);
+          gActive = false;
+          target.classList.add("hidden");
+          document.getElementById("start-game-btn").disabled = false;
+          totalPoints += gScore;
+          if (gScore > bestScore) bestScore = gScore;
+          syncStats();
+          document.getElementById("g-status").innerText = `সময় শেষ! আপনি ${gScore} পয়েন্ট পেয়েছেন।`;
+        }
+      }, 1000);
+    }
+
+    function hitTarget(e) {
+      e.stopPropagation();
+      if (!gActive) return;
+      gScore++;
+      document.getElementById("g-score").innerText = gScore;
+      moveTarget();
     }
 
     const miniQuiz = [
-      {
-        q: "ফুটবল ম্যাচে লাল কার্ড দেখলে কী হয়?",
-        opts: ["শুধু ফ্রি কিক পাওয়া যায়", "খেলোয়াড় মাঠ ছাড়তে বাধ্য হন", "পেনাল্টি দেওয়া হয়", "ম্যাচ বাতিল হয়"],
-        ans: 1
-      },
-      {
-        q: "টি-টোয়েন্টি ক্রিকেটে প্রতি ইনিংস কত ওভারের?",
-        opts: ["১০ ওভার", "২০ ওভার", "৩০ ওভার", "৫০ ওভার"],
-        ans: 1
-      },
-      {
-        q: "অলিম্পিক গেমস সাধারণত কত বছর পরপর হয়?",
-        opts: ["২ বছর", "৩ বছর", "৪ বছর", "৫ বছর"],
-        ans: 2
-      }
+      { q: "ফুটবল ম্যাচে লাল কার্ড দেখলে কী হয়?", opts: ["শুধু ফ্রি কিক", "খেলোয়াড় মাঠ ছাড়তে বাধ্য হন", "পেনাল্টি", "ম্যাচ বাতিল"], ans: 1 },
+      { q: "টি-টোয়েন্টি ক্রিকেটে প্রতি ইনিংস কত ওভারের?", opts: ["১০ ওভার", "২০ ওভার", "৩০ ওভার", "৫০ ওভার"], ans: 1 },
+      { q: "অলিম্পিক গেমস সাধারণত কত বছর পরপর হয়?", opts: ["২ বছর", "৩ বছর", "৪ বছর", "৫ বছর"], ans: 2 }
     ];
-
     let qIdx = 0, qScore = 0, qLocked = false;
 
     function loadQ() {
@@ -492,7 +588,9 @@
       const all = document.querySelectorAll("#q-options .option");
       if (i === right) {
         btn.classList.add("correct");
-        qScore++;
+        qScore += 5;
+        totalPoints += 5;
+        syncStats();
         document.getElementById("q-score").innerText = `স্কোর: ${qScore}`;
       } else {
         btn.classList.add("wrong");
@@ -507,7 +605,7 @@
       else {
         document.getElementById("q-box").classList.add("hidden");
         document.getElementById("q-end").classList.remove("hidden");
-        document.getElementById("q-summary").innerText = `আপনি ${miniQuiz.length}টির মধ্যে ${qScore}টি সঠিক উত্তর দিয়েছেন।`;
+        document.getElementById("q-summary").innerText = `কুইজ থেকে আপনি মোট ${qScore} পয়েন্ট অর্জন করেছেন।`;
       }
     }
 
@@ -518,8 +616,8 @@
       loadQ();
     }
 
-    renderMatches(matches);
+    syncStats();
     loadQ();
   </script>
 </body>
-</html>
+    </html>
